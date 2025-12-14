@@ -1,0 +1,387 @@
+@tablet-width: 768px;
+@mobile-width: 480px;
+@desktop-small: 992px;
+
+.mobile() {
+    @media (max-width: @mobile-width) {
+        @content();
+    }
+}
+
+.tablet() {
+    @media (max-width: @tablet-width) {
+        @content();
+    }
+}
+
+.desktop-small() {
+    @media (max-width: @desktop-small) {
+        @content();
+    }
+}
+
+@media (max-width: @desktop-small) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    // Header адаптив
+    .header {
+        .header-inner {
+            flex-direction: column;
+            gap: 20px;
+            
+            @media (max-width: @tablet-width) {
+                .nav {
+                    .nav-list {
+                        flex-direction: column;
+                        gap: 15px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        
+        .logo h1 {
+            font-size: 20px;
+        }
+    }
+    
+    .hero {
+        padding: 40px 0;
+        min-height: 80vh;
+        margin-top: 120px;
+        
+        .hero-content {
+            .hero-title {
+                font-size: 36px;
+                
+                @media (max-width: @tablet-width) {
+                    font-size: 28px;
+                }
+                
+                @media (max-width: @mobile-width) {
+                    font-size: 24px;
+                }
+            }
+            
+            .hero-subtitle {
+                font-size: 16px;
+                
+                @media (max-width: @mobile-width) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    
+    .features {
+        padding: 60px 0;
+        
+        .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            
+            @media (max-width: @tablet-width) {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .feature-item {
+                padding: 15px;
+                
+                h3 {
+                    font-size: 16px;
+                }
+                
+                p {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+    
+    .works {
+        .works-gallery {
+            grid-template-columns: repeat(2, 1fr);
+            
+            @media (max-width: @tablet-width) {
+                grid-template-columns: 1fr;
+            }
+            
+            .work-item {
+                height: 250px;
+                
+                @media (max-width: @mobile-width) {
+                    height: 200px;
+                }
+            }
+        }
+    }
+    
+    .team {
+        padding: 60px 0;
+        
+        .team-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            
+            @media (max-width: @tablet-width) {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .team-member {
+                .member-photo {
+                    height: 180px;
+                    
+                    @media (max-width: @mobile-width) {
+                        height: 150px;
+                    }
+                }
+                
+                h3 {
+                    font-size: 18px;
+                }
+                
+                .member-description {
+                    font-size: 13px;
+                    padding: 0 15px;
+                }
+            }
+        }
+    }
+    
+    .testimonials {
+        padding: 60px 0;
+        
+        .testimonial-content {
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+            
+            .testimonial-image {
+                .testimonial-photo {
+                    width: 150px;
+                    height: 150px;
+                    
+                    @media (max-width: @mobile-width) {
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+            }
+            
+            .testimonial-text {
+                blockquote {
+                    font-size: 20px;
+                    
+                    @media (max-width: @tablet-width) {
+                        font-size: 18px;
+                    }
+                    
+                    @media (max-width: @mobile-width) {
+                        font-size: 16px;
+                    }
+                }
+                
+                cite {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+    
+    .download {
+        padding: 60px 0;
+        
+        .download-content {
+            padding: 0 20px;
+            
+            h2 {
+                font-size: 24px;
+                
+                @media (max-width: @tablet-width) {
+                    font-size: 20px;
+                }
+                
+                @media (max-width: @mobile-width) {
+                    font-size: 18px;
+                }
+            }
+            
+            p {
+                font-size: 11px;
+            }
+        }
+    }
+    
+    .footer {
+        padding: 40px 0 20px;
+        
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 30px;
+            text-align: center;
+            
+            @media (max-width: @tablet-width) {
+                gap: 25px;
+            }
+            
+            .footer-info {
+                h3 {
+                    font-size: 13px;
+                }
+                
+                p {
+                    font-size: 13px;
+                }
+                
+                .social-icons {
+                    justify-content: center;
+                }
+            }
+        }
+        
+        .footer-bottom {
+            p {
+                font-size: 11px;
+            }
+        }
+    }
+}
+
+@media (max-width: @mobile-width) {
+    .btn {
+        padding: 12px 24px;
+        font-size: 12px;
+    }
+    
+    .header {
+        padding: 15px 0;
+        
+        .header-inner {
+            gap: 15px;
+        }
+        
+        .nav .nav-list {
+            gap: 10px;
+            
+            li a {
+                font-size: 12px;
+            }
+        }
+    }
+    
+    .hero {
+        margin-top: 140px;
+        
+        .hero-content {
+            padding: 0 10px;
+        }
+    }
+    
+    .features .features-grid .feature-item {
+        padding: 10px;
+        
+        .feature-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 12px;
+        }
+    }
+    
+    .team .team-grid .team-member {
+        .member-description {
+            padding: 0 10px;
+            font-size: 12px;
+        }
+        
+        .social-links {
+            padding: 15px;
+            
+            a {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+        }
+    }
+    
+    .works .works-gallery .work-item {
+        .work-overlay {
+            h3 {
+                font-size: 16px;
+            }
+            
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero .hero-content .hero-title {
+        font-size: 56px;
+    }
+    
+    .testimonials .testimonial-content .testimonial-text blockquote {
+        font-size: 28px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding: 20px 0;
+        
+        .hero-content .hero-title {
+            font-size: 32px;
+        }
+    }
+    
+    .header {
+        padding: 10px 0;
+    }
+}
+
+.hide-mobile {
+    @media (max-width: @mobile-width) {
+        display: none !important;
+    }
+}
+
+.hide-tablet {
+    @media (max-width: @tablet-width) {
+        display: none !important;
+    }
+}
+
+.show-mobile {
+    display: none !important;
+    
+    @media (max-width: @mobile-width) {
+        display: block !important;
+    }
+}
+
+.show-tablet {
+    display: none !important;
+    
+    @media (max-width: @tablet-width) {
+        display: block !important;
+    }
+}
